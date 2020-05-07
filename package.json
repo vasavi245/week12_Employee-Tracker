@@ -1,0 +1,19 @@
+{
+  "name": "week12_employee-tracker",
+  "version": "1.0.0",
+  "description": "employee tracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasavi245/week12_Employee-Tracker.git"
+  },
+  "author": "vasavi245",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasavi245/week12_Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/vasavi245/week12_Employee-Tracker#readme"
+}
