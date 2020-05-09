@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/vasavi245/week12_Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/vasavi245/week12_Employee-Tracker#readme"
+  "homepage": "https://github.com/vasavi245/week12_Employee-Tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.1.0",
+    "mysql": "^2.18.1"
+  }
 }
