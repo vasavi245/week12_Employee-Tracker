@@ -1,5 +1,5 @@
 # week12_Employee-Tracker
- ![GitHub issues](https://img.shields.io/github/issues/vasavi245/week12_Readme_Generator)
+ ![GitHub issues](https://img.shields.io/github/issues/vasavi245/week12_Employee-Tracker)
   ## Description
   This is a command-line application to build a solution for managing a company's employees using node, inquirer, and MySQL.
  node app.js
