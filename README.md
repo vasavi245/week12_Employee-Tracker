@@ -19,7 +19,8 @@
   * npm i mysql
   ## Usage
   Below are the screen shots and video of the running application
- 
+  ![employee tracker screenshot](https://user-images.githubusercontent.com/58574509/81820172-d6205c00-9562-11ea-9c76-2f8560c15e52.png)
+  
   ## Contributing
   Activities in UWA Coding Bootcamp 
   ## Tests  
