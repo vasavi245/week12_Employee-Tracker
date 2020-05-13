@@ -4,7 +4,7 @@
   This is a command-line application to build a solution for managing a company's employees using node, inquirer, and MySQL.
  node app.js
  ## Demo
- ![image](
+ ![image](https://drive.google.com/file/d/1qBCcHJi-xwG0Da-B0Ph3Q-RuE-ZnR70h/view)
   ## Table of Contents
   1. [Installation](#Installation)
   2. [Usage](#Usage)
