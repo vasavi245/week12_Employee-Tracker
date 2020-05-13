@@ -1,6 +1,9 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const cTable = require("console.table");
+const chalk = require('chalk');
+const figlet = require('figlet');
+var colors = require('colors');
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -16,6 +19,11 @@ const connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId + "\n");
+  console.log(
+    chalk.green(
+      figlet.textSync('Employee Tracker', { font: 'big', horizontalLayout: 'full' })
+    )
+  );
   init();
 });
 
@@ -98,7 +106,7 @@ function viewAllEmployees() {
 }
 // adding an employee
 function addEmployee() {
-  console.log("Inserting a new employee \n");
+  console.log("Inserting a new employee \n" .blue);
   let roles = [];
     connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
@@ -145,7 +153,7 @@ function addEmployee() {
         ],
         function (err, res) {
           if (err) throw err;
-          console.log("Employee  added!\n");
+          console.log("Employee  added!\n " .yellow);
           init();
         }
       );
@@ -173,7 +181,7 @@ function delEmployee() {
       if(err) throw err;
      toBeRemovedEmployeeId = JSON.parse(JSON.stringify(result[0])).id;
      connection.query("DELETE FROM employee WHERE id=?", toBeRemovedEmployeeId);
-     console.log(`Employee ${answer.empName} was removed`);
+     console.log(`Employee ${answer.empName} was removed`.red);
      init();
     });
   })
@@ -196,7 +204,7 @@ function viewEmpByManager() {
     ]).then(function(answers){
       connection.query(`SELECT * FROM employee WHERE manager_id = '${answers.managerID}'`, function(err, res){
         if(err) throw err;
-        console.table(`Employess with Manager id:'${answers.managerID}'`, res);
+        console.table(`Employess with Manager id:'${answers.managerID}'`.blue, res);
         init();
       });
     })
@@ -321,8 +329,6 @@ function updateEmployeeRole() {
         choices: roles
       }
     ]).then(function(answers){
-      console.log(answers.role);
-      console.log(answers.employee);
       let roleId;
       connection.query(`SELECT id FROM role WHERE title = '${answers.role}'`,function (err, response){
         if(err) throw err;
@@ -332,7 +338,7 @@ function updateEmployeeRole() {
         if(err) throw err;
         empId = JSON.parse(JSON.stringify(result[0])).id;
         connection.query('UPDATE employee SET role_id=? WHERE id= ?', [roleId, empId]);
-        console.log(`${answers.employee} Role updated`);
+        console.log(`${answers.employee} Role updated` .yellow);
         init();
         }) 
      }) 
@@ -364,7 +370,7 @@ function addDepartment() {
         [response.deptName],
         function (err, res) {
           if (err) throw err;
-          console.table("Department Added!");
+          console.table("Department Added!" .blue);
           init();
         }
       );
